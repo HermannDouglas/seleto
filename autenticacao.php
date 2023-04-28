@@ -8,15 +8,18 @@ function autentica($usuario, $codigo)
    global $host, $user, $pass, $bd;
 
    $conectar = mysqli_connect($host, $user, $pass, $bd);
-   // mysqli_select_db($bd, $conectar);
-   $resultado = mysqli_query(
-      $conectar,
-      "SELECT usu_id, usu_login
-      FROM usuarios
-      WHERE usu_login = '$usuario'
-      AND usu_codigo = PASSWORD('$codigo')
-      AND usu_status IS NULL"
-   );
+   $sql = "SELECT usu_id, usu_login
+           FROM usuarios
+           WHERE usu_login = '$usuario'
+           AND usu_codigo = PASSWORD('$codigo')
+           AND usu_status IS NULL";
+   $resultado = mysqli_query($conectar, $sql);
+
+   if (is_object($resultado) && isset($resultado->num_rows)) {
+       $num_rows = $resultado->num_rows;
+   } else {
+       $num_rows = 0;
+   }
 
    $num_linhas = mysqli_num_rows($resultado);
    if ($num_linhas == "1") {
@@ -30,5 +33,5 @@ function autentica($usuario, $codigo)
    } else {
       header("location: index.php");
    }
-}
+ }
 ?>

@@ -1,5 +1,5 @@
-<?php 
-   include "scripts/configura.php" 
+<?php
+include "scripts/configura.php"
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,24 +15,30 @@
    <table align="center" border="0" width="90%" cellspacing="1">
       <tr>
          <td align="center">
-            <b><font face="Verdana" size="3">Sistema de Autenticação</font></b>
+            <b>
+               <font face="Verdana" size="3">Sistema de Autenticação</font>
+            </b>
             <form method="post" action="autenticacao.php">
-               <b><font face="Verdana" size="2">Login:</font></b>
+               <b>
+                  <font face="Verdana" size="2">Login:</font>
+               </b>
                &nbsp; <input type="text" name="usuario" size="16" maxlength="10">
-            </td>
-         </tr>
-         <tr>
-            <td align="center">
-               <b><font face="Verdana" size="2">Senha:</font></b>
-               <input type="password" name="codigo" size="16" maxlength="10">
-            </td>
-         </tr>
-         <tr>
-            <td align="center" valign="top">
+         </td>
+      </tr>
+      <tr>
+         <td align="center">
+            <b>
+               <font face="Verdana" size="2">Senha:</font>
+            </b>
+            <input type="password" name="codigo" size="16" maxlength="10">
+         </td>
+      </tr>
+      <tr>
+         <td align="center" valign="top">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" value="Acessar >>>" name="acessar">
-            </td>
-         </tr>
+         </td>
+      </tr>
       </form>
    </table>
 </body>
