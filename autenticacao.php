@@ -31,3 +31,4 @@ function autentica($usuario, $codigo)
       header("location: index.php");
    }
 }
+?>
