@@ -1,6 +1,6 @@
 <?php
 include "scripts/configura.php";
-include "scripts/funcoes.inc";
+include "scripts/funcoes.inc.php";
 session_start();
 verificaSessao();
 ?>
@@ -43,19 +43,18 @@ verificaSessao();
          <option selected>Selecione ::</option>
 
          <?php
-         $conexao = mysqli_connect($host, $user, $pass, $bd);
-         $sql = mysqli_query($conexao, "SELECT car_id, car_descricao from cargos");
+            $conexao = mysqli_connect($host, $user, $pass, $bd);
+            $sql = mysqli_query($conexao, "SELECT car_id, car_descricao FROM cargos");
 
-         while ($linha = mysqli_fetch_row($sql)) {
-            echo "<option value=\"$linha[0]\">$linha[0] - $linha[1]</option>";
-         }
-
+            while ($linha = mysqli_fetch_row($sql)) {
+               echo "<option value=\"$linha[0]\">$linha[0] - $linha[1]</option>";
+            }
          ?>
 
          </select><br>
          <hr width=20% align=left>
       </b></b>
-      Filiação: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Filiação: <br><br>
       Pai:
       <input type="text" name="candidato_pai" size="32" maxlength="255"><br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

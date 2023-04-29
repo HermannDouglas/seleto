@@ -1,6 +1,6 @@
 <?php
 include "scripts/configura.php";
-include "scripts/funcoes.inc";
+include "scripts/funcoes.inc.php";
 session_start();
 verificaSessao();
 ?>
@@ -16,6 +16,14 @@ verificaSessao();
 </head>
 
 <body>
+   <header class="cabecalho">
+      <center>
+         <h1>Seleto</h1>
+         <h2>Lorem ipsum</h2>
+      </center>
+   </header>
+
+
    <font size=2 face=arial>
       <center>
          <p><u><b>ACESSO PRINCIPAL</b></u></p>
@@ -40,12 +48,12 @@ verificaSessao();
    </div>
    <p>
       <font size=2><b>
-            echo 
+
             <hr width=\"30%\" align=\"center\">
             <center>
-               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">FICHA DE INSCRIÇÃO</a>] |
-               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">lorem ipsum lorem ipsum</a>] |
-               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">lorem ipsum lorem ipsum</a>] |
+               [<a href=\cadastro_candidato.php?id=$_SESSION[id]>FICHA DE INSCRIÇÃO</a>] |
+               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">LOREM IPSUM LOREM IPSUM</a>] |
+               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">LOREM IPSUM LOREM IPSUM</a>] |
 </body>
 
 </html>

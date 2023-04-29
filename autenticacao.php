@@ -1,6 +1,6 @@
 <?php
 
-include "scripts/funcoes.inc";
+include "scripts/funcoes.inc.php";
 autentica($_POST['usuario'], $_POST['codigo']);
 
 function autentica($usuario, $codigo)
@@ -11,15 +11,9 @@ function autentica($usuario, $codigo)
    $sql = "SELECT usu_id, usu_login
            FROM usuarios
            WHERE usu_login = '$usuario'
-           AND usu_codigo = PASSWORD('$codigo')
+           AND usu_codigo = MD5('$codigo')
            AND usu_status IS NULL";
-   $resultado = mysqli_query($conectar, $sql);
-
-   if (is_object($resultado) && isset($resultado->num_rows)) {
-       $num_rows = $resultado->num_rows;
-   } else {
-       $num_rows = 0;
-   }
+   $resultado = mysqli_query($conectar, $sql);  
 
    $num_linhas = mysqli_num_rows($resultado);
    if ($num_linhas == "1") {

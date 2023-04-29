@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set('America/Rio_Branco');
+error_reporting(0);
+
 $host = "localhost";
 $user = "root";
 $pass = "root";
