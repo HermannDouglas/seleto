@@ -22,7 +22,7 @@ include "scripts/configura.php"
                <b>
                   <font face="Verdana" size="2">Login:</font>
                </b>
-               &nbsp; <input type="text" name="usuario" size="16" maxlength="10">
+               <input type="text" name="usuario" size="16" maxlength="10">
          </td>
       </tr>
       <tr>
@@ -35,7 +35,6 @@ include "scripts/configura.php"
       </tr>
       <tr>
          <td align="center" valign="top">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" value="Acessar >>>" name="acessar">
          </td>
       </tr>

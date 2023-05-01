@@ -16,13 +16,7 @@ verificaSessao();
 </head>
 
 <body>
-   <header class="cabecalho">
-      <center>
-         <h1>Seleto</h1>
-         <h2>Lorem ipsum</h2>
-      </center>
-   </header>
-
+   <?php include "header.php"; ?>
 
    <font size=2 face=arial>
       <center>
