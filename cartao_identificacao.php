@@ -15,7 +15,36 @@ verificaSessao();
 
 <body>
    <?php include "header.php" ?>
-   <h1>Página de cartão de identificação</h1>
+   <center>
+      <h1>Cartão de identificação</h1>
+   </center>
+
+   <?php
+   $conexao = mysqli_connect("$host", "$user", "$pass", "$bd");
+   $candidato_id = $_SESSION['id'];
+   $candidato_query = mysqli_query(
+      $conexao,
+      "SELECT cand_nome, cand_nascimento, cand_doc_identificacao, loc_descricao, loc_endereco
+       FROM candidatos, usuarios, locais 
+       WHERE cand_id = $candidato_id
+       AND usu_id = cand_id
+       AND loc_id = cand_loc_id"
+   );
+   // cand_nome	cand_nascimento	cand_doc_identificacao	loc_descricao	loc_endereco
+
+   $candidato = mysqli_fetch_assoc($candidato_query);
+
+   echo "<h1>Cartão de Identificação</h1>";
+   echo "<p><strong>Nome:</strong> {$candidato['cand_nome']}</p>";
+   echo "<p><strong>Data de Nascimento:</strong> " . date('d/m/Y', strtotime($candidato['cand_nascimento'])) . "</p>";
+   // echo "<p><strong>Data de Nascimento:</strong> {$candidato['cand_nascimento']}</p>";
+   echo "<p><strong>Documento de Identidade:</strong> {$candidato['cand_doc_identificacao']}</p>";
+   echo "<p><strong>Local da Prova:</strong> {$candidato['loc_descricao']}</p>";
+   echo "<p><strong>Endereço do Local de Prova:</strong> {$candidato['loc_endereco']}</p>";
+
+   ?>
+   <p><strong>Data da Prova: </strong>28/05/2023</p>
+
 </body>
 
 </html>

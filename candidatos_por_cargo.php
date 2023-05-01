@@ -19,6 +19,7 @@ verificaSessao();
    <center>
       <h1>Lista de candidatos por cargo</h1>
    </center>
+   
    <?php
       $conexao = mysqli_connect("$host", "$user", "$pass", "$bd");
       $lista_candidatos_cargo = mysqli_query(

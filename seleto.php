@@ -48,6 +48,9 @@ verificaSessao();
                [<a href=\cadastro_candidato.php?id=$_SESSION[id]>FICHA DE INSCRIÇÃO</a>] |
                [<a href=\cartao_identificacao.php?id=$_SESSION[id]\>CARTÕES DE IDENTIFICAÇÃO</a>] |
                [<a href=\candidatos_por_cargo.php>CANDIDATOS POR CARGO</a>] |
+
+               <a href="encerra_sessao.php">Encerrar Sessão</a>
+
 </body>
 
 </html>
