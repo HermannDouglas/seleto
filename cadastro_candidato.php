@@ -33,7 +33,7 @@ verificaSessao();
                   <font size="1">Os campos em negrito são de preenchimento obrigatório.</font>
                </i>
             </p>
-            <form method="post" name="formulario" action="<?php $PHP_SELF; ?>">
+            <form method="post" name="formulario" action="cadastro_candidato_grava.php">
                <font color="red">
                   Número de inscrição:
                </font>
@@ -70,7 +70,7 @@ verificaSessao();
                   Identificação Nº:
                   <input type="text" name="candidato_documento_identificacao" size="15" maxlength=20>
                   Tipo:
-                  <select size="1" name="canndidato_tipo_identidade">
+                  <select size="1" name="candidato_tipo_identidade">
                      <option selected>Selecione ::</option>
                      <option value=2>2 - RG</option>
                      <option value=3>3 - Cart. Habilitação</option>

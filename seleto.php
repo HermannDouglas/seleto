@@ -46,8 +46,8 @@ verificaSessao();
             <hr width=\"30%\" align=\"center\">
             <center>
                [<a href=\cadastro_candidato.php?id=$_SESSION[id]>FICHA DE INSCRIÇÃO</a>] |
-               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">LOREM IPSUM LOREM IPSUM</a>] |
-               [<a href=\"cadastro_candidato.php?id=$_SESSION[id]\"">LOREM IPSUM LOREM IPSUM</a>] |
+               [<a href=\cartao_identificacao.php?id=$_SESSION[id]\>CARTÕES DE IDENTIFICAÇÃO</a>] |
+               [<a href=\candidatos_por_cargo.php>CANDIDATOS POR CARGO</a>] |
 </body>
 
 </html>
