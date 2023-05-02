@@ -16,7 +16,7 @@ verificaSessao();
 <body bgcolor="c0c0c0">
    <?php include "header.php" ?>
    <center>
-      <h1>Cartão de identificação</h1>
+      <h1>Cartões de identificação</h1>
    </center>
 
    <?php
@@ -25,25 +25,28 @@ verificaSessao();
    $candidato_query = mysqli_query(
       $conexao,
       "SELECT cand_nome, cand_nascimento, cand_doc_identificacao, loc_descricao, loc_endereco
-       FROM candidatos, usuarios, locais 
-       WHERE cand_id = $candidato_id
-       AND usu_id = cand_id
-       AND loc_id = cand_loc_id"
+       FROM candidatos, locais 
+       WHERE loc_id = cand_loc_id"
    );
    // cand_nome	cand_nascimento	cand_doc_identificacao	loc_descricao	loc_endereco
 
-   $candidato = mysqli_fetch_assoc($candidato_query);
+   while ($candidato = mysqli_fetch_assoc($candidato_query)) {
 
-   echo "<h1>Cartão de Identificação</h1>";
-   echo "<p><strong>Nome:</strong> {$candidato['cand_nome']}</p>";
-   echo "<p><strong>Data de Nascimento:</strong> " . date('d/m/Y', strtotime($candidato['cand_nascimento'])) . "</p>";
-   // echo "<p><strong>Data de Nascimento:</strong> {$candidato['cand_nascimento']}</p>";
-   echo "<p><strong>Documento de Identidade:</strong> {$candidato['cand_doc_identificacao']}</p>";
-   echo "<p><strong>Local da Prova:</strong> {$candidato['loc_descricao']}</p>";
-   echo "<p><strong>Endereço do Local de Prova:</strong> {$candidato['loc_endereco']}</p>";
+      $data_nascimento_formatado = date('d/m/Y', strtotime($candidato['cand_nascimento']));
+
+      echo "<h1>Cartão de Identificação</h1>";
+      echo "<h2><strong>Candidato:</strong> {$candidato['cand_nome']}</h2>";
+      echo "<p><strong>Data de Nascimento:</strong> {$data_nascimento_formatado}</p>";
+      // echo "<p><strong>Data de Nascimento:</strong> {$candidato['cand_nascimento']}</p>";
+      echo "<p><strong>Documento de Identidade:</strong> {$candidato['cand_doc_identificacao']}</p>";
+      echo "<p><strong>Local da Prova:</strong> {$candidato['loc_descricao']}</p>";
+      echo "<p><strong>Endereço do Local de Prova:</strong> {$candidato['loc_endereco']}</p>";
+      echo "<p><strong>Data da Prova: </strong>28/05/2023</p>";
+      echo "<hr>";
+   }
 
    ?>
-   <p><strong>Data da Prova: </strong>28/05/2023</p>
+   <!-- <p><strong>Data da Prova: </strong>28/05/2023</p> -->
 
 </body>
 
