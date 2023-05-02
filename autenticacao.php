@@ -23,7 +23,7 @@ function autentica($usuario, $codigo)
       session_start();
       $_SESSION["id"] = $id_usuario;
       $_SESSION["login"] = $login_usuario;
-      header("location: seleto.php");
+      header("location: seleto.php?id=$_SESSION[id]");
    } else {
       header("location: index.php");
    }

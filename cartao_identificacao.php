@@ -13,7 +13,7 @@ verificaSessao();
    <title>Cartão de identificação</title>
 </head>
 
-<body>
+<body bgcolor="c0c0c0">
    <?php include "header.php" ?>
    <center>
       <h1>Cartão de identificação</h1>

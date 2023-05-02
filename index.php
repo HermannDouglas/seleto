@@ -12,7 +12,13 @@ include "scripts/configura.php"
 </head>
 
 <body>
-   <table align="center" border="0" width="90%" cellspacing="1">
+   <table align="center" border="0" bgcolor="C0C0C0" width="80%" cellspacing="1">
+      <tr>
+         <td>
+            <h2 align="center">Prefeitura Municipal de Rio Branco</h2>
+            <?php include "header.php"; ?>
+         </td>
+      </tr>
       <tr>
          <td align="center">
             <b>

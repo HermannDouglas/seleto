@@ -15,8 +15,9 @@ verificaSessao();
    <title>Seleto</title>
 </head>
 
-<body>
+<body bgcolor="C0C0C0">
    <?php include "header.php"; ?>
+   
 
    <font size=2 face=arial>
       <center>
@@ -37,19 +38,23 @@ verificaSessao();
          $login = $linha["usu_login"];
          echo "<font size=2<center>Bem-vindo(a). $nome ($login) !<p><font size=\"1\">";
          imprimeData();
-         ?></center>
+         ?>
+         </center>
    </font>
-   </div>
+
    <p>
       <font size=2><b>
-
-            <hr width=\"30%\" align=\"center\">
+         <?php
+         echo "
+            <hr width=\"60%\" align=\"center\">
             <center>
-               [<a href=\cadastro_candidato.php?id=$_SESSION[id]>FICHA DE INSCRIÇÃO</a>] |
-               [<a href=\cartao_identificacao.php?id=$_SESSION[id]\>CARTÕES DE IDENTIFICAÇÃO</a>] |
-               [<a href=\candidatos_por_cargo.php>CANDIDATOS POR CARGO</a>] |
-
-               <a href="encerra_sessao.php">Encerrar Sessão</a>
+               [<a href=\"\cadastro_candidato.php?id=$_SESSION[id]\">FICHA DE INSCRIÇÃO</a>] |
+               [<a href=\"\cartao_identificacao.php?id=$_SESSION[id]\">CARTÕES DE IDENTIFICAÇÃO</a>] |
+               [<a href=\"\candidatos_por_cargo.php?id=$_SESSION[id]\">CANDIDATOS POR CARGO</a>] |
+               [<a href=\"encerra_sessao.php\">ENCERRAR SESSÃO</a>]
+            </center>
+         ";
+         ?>
 
 </body>
 

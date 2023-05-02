@@ -14,7 +14,7 @@ verificaSessao();
    <title>Canditatos por cargo</title>
 </head>
 
-<body>
+<body bgcolor="c0c0c0">
    <?php include "header.php" ?>
    <center>
       <h1>Lista de candidatos por cargo</h1>
