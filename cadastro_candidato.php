@@ -16,12 +16,12 @@ verificaSessao();
 </head>
 
 <body>
-   <?php include "header.php"; ?>
-   <?php
-   if (!isset($grava_bd)) {
-   }
+   <?php 
+   include "header.php"; 
+   include "links.php"; 
    ?>
-   <table align="center" border="0" width="80%" cellspacing="1">
+   <br>
+   <table align="center" border="0" width="60%" cellspacing="1">
       <tr>
          <td width=100% bgcolor="C0C0C0" valign="middle">
             <center>
@@ -59,7 +59,7 @@ verificaSessao();
                      }
                      ?>
                   </select><br>
-                  <hr width=50% align=left>
+                  <hr width="98%" align="center">
                </b>
                Filiação:<br><br>
                Pai:
@@ -80,7 +80,7 @@ verificaSessao();
                      <option value=7>7 - Reg. Forças Armadas (Exe, Aer, Mar)</option>
                   </select><br>
 
-                  <hr width=50% align=left>
+                  <hr width="98%" align="center">
                   Data Inscrição:
                   <input type="date" name="data_inscricao">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -96,6 +96,7 @@ verificaSessao();
             </form>
             </p>
    </table>
+
 </body>
 
 </html>

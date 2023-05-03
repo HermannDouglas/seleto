@@ -15,12 +15,20 @@ verificaSessao();
 </head>
 
 <body bgcolor="c0c0c0">
-   <?php include "header.php" ?>
+   <?php
+   include "header.php";
+   include "links.php";
+   ?>
    <center>
       <h1>Lista de candidatos por cargo</h1>
    </center>
-   
-   <?php
+
+   <div style="
+      margin: 0 auto;
+      width: 60%;
+      ">
+
+      <?php
       $conexao = mysqli_connect("$host", "$user", "$pass", "$bd");
       $lista_candidatos_cargo = mysqli_query(
          $conexao,
@@ -40,26 +48,20 @@ verificaSessao();
          // $cargo_nome = $candidato['car_descricao'];
          $cargo_atual = $candidato['car_descricao'];
 
-         // if ($cargo_atual != $cargo_nome) {
-         //    echo "<h2>$cargo_nome</h2>";
-         //    $cargo_atual = $cargo_nome;
-         //    echo "<ul>";
-         // }
-
          if ($cargo_atual != $cargo_anterior) {
             echo "</ul>";
-            echo "<h2>$cargo_atual</h2>";
+            echo "<h2 style=\"font-size: 1.5rem;\" >$cargo_atual:</h2>";
             echo "<ul>";
             $cargo_anterior = $cargo_atual;
          }
-   
 
-         echo "<li>$candidato_nome</li>";
+         echo "<li style=\"font-size: 1.1rem;\">$candidato_nome</li>";
       }
       echo "</ul>";
 
       ?>
       <!-- </center> -->
+   </div>
 </body>
 
 </html>

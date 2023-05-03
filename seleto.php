@@ -6,7 +6,7 @@ verificaSessao();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
    <meta charset="UTF-8">
@@ -17,9 +17,9 @@ verificaSessao();
 
 <body bgcolor="C0C0C0">
    <?php include "header.php"; ?>
-   
 
-   <font size=2 face=arial>
+
+   <font size="2" face="arial">
       <center>
          <p><u><b>ACESSO PRINCIPAL</b></u></p>
       </center>
@@ -36,25 +36,15 @@ verificaSessao();
          $linha = mysqli_fetch_assoc($boas_vindas);
          $nome = $linha["usu_nome"];
          $login = $linha["usu_login"];
-         echo "<font size=2<center>Bem-vindo(a). $nome ($login) !<p><font size=\"1\">";
+         echo "<font size=\"2\"<center>Bem-vindo(a). $nome ($login) !<p><font size=\"1\">";
          imprimeData();
+         echo "<p>";
          ?>
          </center>
    </font>
-
    <p>
-      <font size=2><b>
-         <?php
-         echo "
-            <hr width=\"60%\" align=\"center\">
-            <center>
-               [<a href=\"\cadastro_candidato.php?id=$_SESSION[id]\">FICHA DE INSCRIÇÃO</a>] |
-               [<a href=\"\cartao_identificacao.php?id=$_SESSION[id]\">CARTÕES DE IDENTIFICAÇÃO</a>] |
-               [<a href=\"\candidatos_por_cargo.php?id=$_SESSION[id]\">CANDIDATOS POR CARGO</a>] |
-               [<a href=\"encerra_sessao.php\">ENCERRAR SESSÃO</a>]
-            </center>
-         ";
-         ?>
+      <hr width="60%" align="center">
+      <?php include "links.php"; ?>
 
 </body>
 
